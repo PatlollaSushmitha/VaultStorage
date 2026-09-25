@@ -1,3 +1,5 @@
+
+
 require("dotenv").config();
 
 const app = require("./app");
@@ -22,9 +24,9 @@ async function start() {
     process.exit(1);
   }
 
-  app.listen(PORT, () => {
-    logger.info(`Vault backend listening on http://localhost:${PORT}`);
-  });
+  app.listen(PORT, "0.0.0.0", () => {
+  logger.info(`Vault backend listening on port ${PORT}`);
+});
 }
 
 start();
